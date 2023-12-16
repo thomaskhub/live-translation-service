@@ -88,12 +88,12 @@ delete the event
 
 ---
 
--   **POST /login**
+-   **POST /user/events/${code}**
 
     -   Authenticate users with a 6-digit code.
         [TK]: no login is needed as such they are entering the code. If they enter a valid code we return the languages. Could be replaced GET::user/events/${code}
 
--   **GET /languages**
+-   **GET /user/events**
 
     -   Retrieve a list of available languages for the event.
         [TK]: I think not needed we can call user/events which will return a list of all languages available
@@ -108,13 +108,10 @@ delete the event
     -   Stop the current audio stream.
         [TK] We can use this to stop the servers once the session is over
 
--   **GET /stream/status**
-    -   Check the status of the audio stream.
-        [TK]: No need for this route I feel
 
 ## Admin Endpoints
 
--   **POST /admin/login**
+-   **POST /admin/login** (not mvp)
 
     -   For admin login to the dashboard.
         [TK]: we will later use sso for this. We can ignore this in the first version
@@ -144,15 +141,6 @@ delete the event
 
 ## Translator Endpoints
 
--   **POST /translator/login**
-
-    -   For translator login.
-        [TK]: same as for user
-
--   **GET /translator/sessions**
-
-    -   List sessions available for translation.
-        [TK]: same as for user
 
 -   **POST /translator/stream/start**
 
@@ -167,6 +155,6 @@ delete the event
 
 ## Common Endpoints
 
--   **GET /health**
+-   **GET /health** (not mvp)
     -   Check the system's health.
         [TK]: this we can add later once we have the rest in place
